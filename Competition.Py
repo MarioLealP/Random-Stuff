@@ -1,7 +1,7 @@
 from ast import literal_eval
 Competition =  {}
 
-CompetitionName = 2
+CompetitionName = 3
 
 def addresults():
     print("Quit by hitting enter ")
