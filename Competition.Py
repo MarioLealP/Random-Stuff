@@ -1,7 +1,7 @@
 from ast import literal_eval
 Competition =  {}
 
-CompetitionName = 3
+CompetitionName = None
 
 def addresults():
     print("Quit by hitting enter ")
@@ -29,13 +29,23 @@ def saveCompetition():
 
 
 def loadCompetition():
-    CompetitionName = input("Input the name of the competition you wish to load: ")
-    ComNameTxt = str(CompetitionName) + ".txt"
-    loadFile = open(ComNameTxt, "r")
-    contents = loadFile.read()
-    Competition = literal_eval(contents)
-    loadFile.close()
-    return CompetitionName, Competition
+    error = True
+    while error == True:
+        try:
+            CompetitionName = input("Input the name of the competition you wish to load or hit enter to quit: ")
+            if CompetitionName == "" :
+                return "", {}
+                error = False
+                break
+            ComNameTxt = str(CompetitionName) + ".txt"
+            loadFile = open(ComNameTxt, "r")
+            contents = loadFile.read()
+            Competition = literal_eval(contents)
+            loadFile.close()
+            error = False
+            return CompetitionName, Competition
+        except FileNotFoundError:
+            print('File does not exist')
 
 
 results = True

@@ -1,1 +1,1 @@
-{'Benylin': '55', 'Fio': '33', 'Mira': '76', 'Hide': '89', 'Kuri': '23'}
+{'Benylin': '55', 'Fio': '33', 'Mira': '76', 'Hide': '89', 'Kuri': '23', 'Yatsu': '31'}
